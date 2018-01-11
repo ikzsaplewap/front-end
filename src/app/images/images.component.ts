@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IMAGES} from './mock-images';
 
 @Component({
   selector: 'app-images',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImagesComponent implements OnInit {
 
+  images = IMAGES;
+  showFreshnessDefinition: boolean;
   constructor() { }
 
   ngOnInit() {
+    this.showFreshnessDefinition = false;
+  }
+
+  mouseEnter(){
+    this.showFreshnessDefinition = true;
+  }
+
+  mouseLeave(){
+    this.showFreshnessDefinition = false;
   }
 
 }
