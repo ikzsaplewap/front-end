@@ -1,3 +1,40 @@
-<p>
-  containers works!
-</p>
+<div class="row">
+  <div class="col-md-2">Image name</div>
+  <div class="col-md-2">Container ID</div>
+  <div class="col-md-2">Container name</div>
+  <div class="col-md-2" style="text-align: center;">Source extracted</div>
+  <div class="col-md-1" style="text-align: center;">Status</div>
+  <div class="col-md-2">Actions</div>
+  <div class="col-md-1"><span class="glyphicon glyphicon-sort" aria-hidden=true></span></div>
+</div>
+<hr>
+<div class="bottomMarginSingleLine" *ngFor="let container of containers">
+  <div class="row">
+    <div class="col-md-2">{{container.image_name}}</div>
+    <div class="col-md-2">{{container.id}}</div>
+    <div class="col-md-2">{{container.name}}</div>
+    <div class="col-md-2" style="text-align: center;"><span [ngClass]="container.source_extracted ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'"></span></div>
+    <div class="col-md-1" style="text-align: center;">{{container.status}}</div>
+    <div class="col-md-2">
+      <div class="dropdown" dropdown>
+        <button type="button" class="btn btn-default btn-sm btn-block dropdown-toggle" dropdownToggle>actions ▼</button>
+
+        <ul class="dropdown-menu" dropdownMenu>
+          <li><a class="btn btn-default btn-block" href="#">start</a></li>
+          <li><a class="btn btn-default btn-block" href="#">stop</a></li>
+          <li><a class="btn btn-default btn-block" href="#">remove</a></li>
+          <li><a class="btn btn-default btn-block" href="#">extract src</a></li>
+          <li><a class="btn btn-default btn-block" href="#">check (snyk)</a></li>
+          <li><a class="btn btn-default btn-block" href="#">check (NSP)</a></li>
+          <li><a class="btn btn-default btn-block" href="#">check pkg updates</a></li>
+          <li><a class="btn btn-default btn-block" href="#">update packages</a></li>
+          <li><a class="btn btn-default btn-block" href="#">run npm tests</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>

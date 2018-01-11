@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CONTAINERS } from './mock-containers';
 
 @Component({
   selector: 'app-containers',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContainersComponent implements OnInit {
 
+  containers = CONTAINERS;
   constructor() { }
 
   ngOnInit() {
